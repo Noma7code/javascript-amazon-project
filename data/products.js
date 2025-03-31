@@ -89,6 +89,19 @@ const object3 = {
 object3.method();
 */
 
+export let products = []; 
+function loadProducts(){
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener('load',()=>{
+    console.log(xhr.response());
+  })
+  xhr.open('GET','https://supersimplebackend.dev/products');
+  xhr.send();
+}
+
+loadProducts();
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -753,4 +766,4 @@ export const products = [
     return new Clothing(productDetails);
   }
   return new Product(productDetails);
-});
+}); */
